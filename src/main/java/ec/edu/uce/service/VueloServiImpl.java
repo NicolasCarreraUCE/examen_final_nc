@@ -47,7 +47,7 @@ public class VueloServiImpl implements IVueloServi {
 	}
 
 	@Override
-	@Async
+	//@Async
 	public List<Vuelo> buscarPorOrigenDestinoFecha(String origen, String destino, LocalDateTime fechaVuelo) {
 		// TODO Auto-generated method stub
 		return this.vueloRepo.buscarPorOrigenDestinoFecha(origen, destino, fechaVuelo);

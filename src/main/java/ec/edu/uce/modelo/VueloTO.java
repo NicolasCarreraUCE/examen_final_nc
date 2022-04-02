@@ -14,7 +14,7 @@ public class VueloTO {
 	public VueloTO() {
 		// TODO Auto-generated constructor stub
 	}
-	
+	 
 	public VueloTO(String numeroVuelo, String origen, String destino, Character categoria, String nombreAvion,
 			BigDecimal valorAsiento) {
 		this.numeroVuelo = numeroVuelo;

@@ -38,9 +38,6 @@ public class CompraPasaje {
 	@Column(name = "copa_estado")
 	private Character estado;
 	
-	@Column(name = "copa_categoria")
-	private Character categoria;
-	
 	@ManyToOne
 	@JoinColumn(name = "vuel_id")
 	private Vuelo vuelo;
@@ -114,12 +111,4 @@ public class CompraPasaje {
 		this.cliente = cliente;
 	}
 
-	public Character getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Character categoria) {
-		this.categoria = categoria;
-	}
-	
 }

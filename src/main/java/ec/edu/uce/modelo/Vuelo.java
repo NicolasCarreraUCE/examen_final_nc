@@ -48,6 +48,9 @@ public class Vuelo {
 	@Column(name = "vuel_destino")
 	private String destino;
 	
+	@Column(name = "vuel_categoria")
+	private Character categoria;
+	
 	@ManyToOne
 	@JoinColumn(name = "avio_id")
 	private Avion avion;
@@ -134,6 +137,14 @@ public class Vuelo {
 
 	public void setCompraPasajes(List<CompraPasaje> compraPasajes) {
 		this.compraPasajes = compraPasajes;
+	}
+
+	public Character getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Character categoria) {
+		this.categoria = categoria;
 	}
 	
 }
