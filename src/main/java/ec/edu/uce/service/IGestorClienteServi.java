@@ -7,5 +7,5 @@ import ec.edu.uce.modelo.VueloTO;
 
 public interface IGestorClienteServi {
 	List<VueloTO> buscarVuelosDisponibles(String origen, String destino, LocalDateTime fechaVuelo);
-	
+	void reservarPasajesAereo(String numeroVuelo);
 }

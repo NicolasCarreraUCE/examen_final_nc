@@ -3,6 +3,7 @@ package ec.edu.uce.service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -34,13 +35,19 @@ public class GestorClienteServiImlp implements IGestorClienteServi {
 		CompletableFuture<List<VueloTO>> vuelosTuristas = (CompletableFuture<List<VueloTO>>) this.buscarPorEstado(vuelosDisponibles, Character.valueOf('T'));
 		
 		CompletableFuture.allOf(vuelosEconomicos, vuelosNegocios, vuelosTuristas);
-				
-		return Stream.concat(vuelosEconomicos.get().stream(), vuelosNegocios.get().stream());
+		
+		return null;
 	}
 	
 	@Async
 	private List<VueloTO> buscarPorEstado(List<VueloTO> lista, Character estado){
-		return lista.parallelStream().filter(v -> v.getCategoria().equals(estado)).collect(Collectors.toList());;
+		return lista.parallelStream().filter(v -> v.getCategoria().equals(estado)).collect(Collectors.toList());
+	}
+
+	@Override
+	public void reservarPasajesAereo(String numeroVuelo) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
